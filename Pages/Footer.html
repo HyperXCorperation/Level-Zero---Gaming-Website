@@ -3,15 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Footer</title>
+  <title>Your Website Title</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    /* Basic styling to ensure content pushes the footer down */
     body {
-      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
       margin: 0;
-      padding: 0;
       background-color: #181818;
       color: #d1d1d1;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .content {
+      flex-grow: 1;
+      padding: 20px;
     }
 
     footer {
@@ -49,6 +58,12 @@
       margin: 0 auto;
     }
 
+    .newsletter-form label {
+      position: relative;
+      display: block;
+      flex-grow: 1;
+    }
+
     .newsletter-form input[type="email"],
     .newsletter-form input[type="text"] {
       padding: 14px;
@@ -58,6 +73,34 @@
       background-color: #303030;
       color: #d1d1d1;
       font-size: 0.9em;
+      width: 100%;
+      box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .newsletter-form input:focus {
+      border-color: #ffc107;
+    }
+
+    .newsletter-form span {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      color: #777;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .newsletter-form input:focus + span,
+    .newsletter-form input:not(:placeholder-shown) + span {
+      top: -10px;
+      left: 0;
+      font-size: 0.7em;
+      color: #ffc107;
+      background-color: #303030;
+      padding: 0 5px;
+      border-radius: 2px;
     }
 
     .newsletter-form button {
@@ -245,13 +288,22 @@
   </style>
 </head>
 <body>
+
+  <header>
+    
   <footer>
     <div class="footer-top">
       <div class="newsletter-container">
         <h3>NEWSLETTER</h3>
         <form class="newsletter-form">
-          <input type="text" placeholder="Your Name">
-          <input type="email" placeholder="Your Email">
+          <label>
+            <input type="text" placeholder="">
+            <span>Your Name</span>
+          </label>
+          <label>
+            <input type="email" placeholder="">
+            <span>Your Email</span>
+          </label>
           <button type="submit">SUBSCRIBE</button>
         </form>
       </div>
@@ -318,12 +370,12 @@
         <div class="footer-widget">
           <h6>Apps & Platforms</h6>
           <div class="apps-platforms">
-            <a href="#"><img src="https://github.com/HyperXCorperation/Level-Zero---Gaming-Website/blob/main/images/apple-logo.png?raw=true" alt="Apple Store"> Apple Store</a>
-            <a href="#"><img src="https://github.com/HyperXCorperation/Level-Zero---Gaming-Website/blob/main/images/google-play-logo.png?raw=true" alt="Google Play"> Google play</a>
-            <a href="#"><img src="https://github.com/HyperXCorperation/Level-Zero---Gaming-Website/blob/main/images/steam-logo.png?raw=true" alt="Steam"> Steam</a>
-            <a href="#"><img src="https://github.com/HyperXCorperation/Level-Zero---Gaming-Website/blob/main/images/windows-logo.png?raw=true" alt="Windows"> Windows</a>
-            <a href="#"><img src="https://github.com/HyperXCorperation/Level-Zero---Gaming-Website/blob/main/images/epicgames-logo.png?raw=true" alt="Epic Games"> Epic Games</a>
-            <a href="#"><img src="https://github.com/HyperXCorperation/Level-Zero---Gaming-Website/blob/main/images/playstation-logo.png?raw=true" alt="Playstation"> PSN</a>
+            <a href="https://www.apple.com/app-store/" target="_blank"><img src="https://github.com/HyperXCorperation/Level-Zero---Gaming-Website/blob/main/images/apple-logo.png?raw=true" alt="Apple Store"> Apple Store</a>
+            <a href="https://play.google.com/store" target="_blank"><img src="https://github.com/HyperXCorperation/Level-Zero---Gaming-Website/blob/main/images/google-play-logo.png?raw=true" alt="Google Play"> Google play</a>
+            <a href="https://store.steampowered.com/" target="_blank"><img src="https://github.com/HyperXCorperation/Level-Zero---Gaming-Website/blob/main/images/steam-logo.png?raw=true" alt="Steam"> Steam</a>
+            <a href="https://www.microsoft.com/en-us/store/apps/windows" target="_blank"><img src="https://github.com/HyperXCorperation/Level-Zero---Gaming-Website/blob/main/images/windows-logo.png?raw=true" alt="Windows"> Windows</a>
+            <a href="https://www.epicgames.com/store/en-US/" target="_blank"><img src="https://github.com/HyperXCorperation/Level-Zero---Gaming-Website/blob/main/images/epicgames-logo.png?raw=true" alt="Epic Games"> Epic Games</a>
+            <a href="https://store.playstation.com/" target="_blank"><img src="https://github.com/HyperXCorperation/Level-Zero---Gaming-Website/blob/main/images/playstation-logo.png?raw=true" alt="Playstation"> PSN</a>
           </div>
         </div>
         <div class="footer-widget">
@@ -348,5 +400,6 @@
       <p>&copy; 2025 Level Zero. Copyright © 2025 HyperX Corperation - All rights reserved.</p>
     </div>
   </footer>
+
 </body>
 </html>
