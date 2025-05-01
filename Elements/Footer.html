@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Basic styling to ensure content pushes the footer down */
+        /* Basic styling */
         body {
             display: flex;
             flex-direction: column;
@@ -28,7 +28,18 @@
             color: #d1d1d1;
             padding-top: 30px;
             border-top: 1px solid #2e2e2e;
-            height: auto; /* Adjust based on content */
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            height: 20px; /* Initial visible height */
+            transition: height 0.3s ease-in-out;
+            z-index: 50; /* Ensure it's above the main content */
+        }
+
+        footer:hover {
+            height: auto; /* Expand on hover */
         }
 
         .footer-top {
@@ -293,7 +304,7 @@
     <header>
         </header>
     <div class="content">
-     
+        <p style="height: 150vh;">Main content goes here.</p>
     </div>
     <footer>
         <div class="footer-top">
